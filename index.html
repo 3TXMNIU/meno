@@ -14,39 +14,22 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            background: #0a0a0a;
             color: #fff;
             padding-bottom: 100px;
         }
 
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #e63946;
-            border-radius: 10px;
-        }
-
         .header {
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(20px);
+            background: #0a0a0a;
             padding: 15px 20px;
-            border-bottom: 1px solid rgba(230, 57, 70, 0.3);
+            border-bottom: 1px solid #222;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .logo h1 {
-            background: linear-gradient(135deg, #e63946, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #e63946;
             font-size: 28px;
             font-weight: 900;
         }
@@ -58,48 +41,40 @@
         }
 
         .banner {
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(0,0,0,0.5));
+            background: #111;
             margin: 20px;
-            padding: 35px 20px;
-            border-radius: 30px;
+            padding: 30px 20px;
+            border-radius: 20px;
             text-align: center;
-            border: 1px solid rgba(230, 57, 70, 0.3);
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 0.6s ease;
+            border: 1px solid #222;
         }
 
         .banner h2 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #e63946);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
 
         .banner p {
-            color: #aaa;
+            color: #888;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .rating-btn {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(230, 57, 70, 0.5);
+            background: rgba(255,255,255,0.05);
+            border: none;
             color: #fff;
-            padding: 10px 25px;
-            border-radius: 50px;
+            padding: 8px 20px;
+            border-radius: 30px;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
         }
 
         .categories {
             display: flex;
             gap: 12px;
             padding: 0 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             overflow-x: auto;
             scrollbar-width: none;
         }
@@ -110,125 +85,113 @@
 
         .cat-btn {
             background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: none;
             color: #fff;
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-size: 16px;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             white-space: nowrap;
-            transition: all 0.3s ease;
         }
 
         .cat-btn.active {
-            background: linear-gradient(135deg, #e63946, #b91c1c);
-            border-color: transparent;
-            box-shadow: 0 5px 20px rgba(230, 57, 70, 0.4);
+            background: #e63946;
         }
 
         .section-title {
             padding: 0 20px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .section-title h3 {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 800;
-            margin-bottom: 8px;
         }
 
         .line {
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #e63946, #ff6b6b);
-            border-radius: 2px;
+            width: 50px;
+            height: 3px;
+            background: #e63946;
+            margin-top: 5px;
         }
 
         .products {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+            gap: 15px;
             padding: 0 20px;
         }
 
         .product-card {
-            background: linear-gradient(135deg, rgba(30,30,30,0.9), rgba(20,20,20,0.9));
-            border-radius: 20px;
+            background: #111;
+            border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid #222;
             position: relative;
-        }
-
-        .product-card:active {
-            transform: scale(0.98);
         }
 
         .product-img {
             width: 100%;
-            height: 160px;
+            height: 150px;
             object-fit: cover;
+            background: #1a1a1a;
         }
 
         .add-btn {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: linear-gradient(135deg, #e63946, #b91c1c);
+            top: 10px;
+            left: 10px;
+            background: #e63946;
             border: none;
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: white;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
             z-index: 10;
         }
 
         .product-info {
-            padding: 14px;
+            padding: 12px;
             text-align: center;
         }
 
         .product-info h4 {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
 
         .product-info p {
             font-size: 11px;
-            color: #999;
-            margin-bottom: 10px;
+            color: #888;
+            margin-bottom: 8px;
         }
 
         .price {
             color: #e63946;
-            font-weight: 800;
-            font-size: 15px;
-            display: inline-block;
-            background: rgba(230, 57, 70, 0.15);
-            padding: 4px 12px;
-            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
         }
 
         .cart-btn {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: linear-gradient(135deg, #e63946, #b91c1c);
+            bottom: 20px;
+            right: 20px;
+            background: #e63946;
             border: none;
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            font-size: 28px;
+            font-size: 26px;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.5);
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
             z-index: 99;
             display: flex;
             align-items: center;
@@ -237,15 +200,15 @@
 
         .cart-count {
             position: absolute;
-            top: -8px;
-            right: -8px;
+            top: -5px;
+            right: -5px;
             background: #ffc107;
             color: #000;
             border-radius: 50%;
-            width: 26px;
-            height: 26px;
-            font-size: 13px;
-            font-weight: 900;
+            width: 22px;
+            height: 22px;
+            font-size: 12px;
+            font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -256,33 +219,36 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, #0a0a0a, transparent);
-            padding: 20px 20px 25px;
+            background: #0a0a0a;
+            padding: 15px 20px;
+            border-top: 1px solid #222;
+            z-index: 98;
         }
 
         .whatsapp-btn {
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            background: #25D366;
             border: none;
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
-            border-radius: 60px;
+            padding: 15px 20px;
+            border-radius: 50px;
             color: white;
-            font-weight: 800;
-            font-size: 17px;
+            font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
         }
 
         .whatsapp-btn:disabled {
             opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .total-price {
-            background: rgba(0,0,0,0.4);
-            padding: 6px 16px;
-            border-radius: 40px;
+            background: rgba(0,0,0,0.3);
+            padding: 5px 12px;
+            border-radius: 30px;
         }
 
         .modal {
@@ -291,30 +257,30 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.95);
-            z-index: 1000;
+            background: rgba(0,0,0,0.9);
+            z-index: 200;
             display: flex;
             align-items: flex-end;
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #141414, #0a0a0a);
+            background: #111;
             width: 100%;
-            border-radius: 35px 35px 0 0;
-            max-height: 85vh;
+            border-radius: 30px 30px 0 0;
+            max-height: 80vh;
             overflow: hidden;
         }
 
         .modal-header {
-            padding: 22px 20px;
-            border-bottom: 1px solid rgba(230, 57, 70, 0.3);
+            padding: 20px;
+            border-bottom: 1px solid #222;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .modal-header h3 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
         }
 
@@ -326,17 +292,17 @@
 
         .cart-item {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             margin-bottom: 15px;
-            background: rgba(255,255,255,0.05);
-            padding: 12px;
-            border-radius: 18px;
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 12px;
         }
 
         .cart-item-img {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
             object-fit: cover;
         }
 
@@ -345,9 +311,9 @@
         }
 
         .cart-item-info h4 {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .cart-item-controls {
@@ -357,13 +323,13 @@
         }
 
         .cart-item-controls button {
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             border: none;
-            background: rgba(255,255,255,0.1);
+            background: #2a2a2a;
             color: white;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
         }
@@ -372,20 +338,14 @@
             background: none;
             border: none;
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
         .cart-footer {
             margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+            border-top: 1px solid #222;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -393,23 +353,16 @@
 
         .toast {
             position: fixed;
-            bottom: 130px;
+            bottom: 100px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #e63946, #b91c1c);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 60px;
+            background: #e63946;
+            padding: 8px 20px;
+            border-radius: 30px;
             z-index: 1001;
             animation: fadeOut 2s ease;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
             white-space: nowrap;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeOut {
@@ -424,28 +377,28 @@
 <div id="app"></div>
 
 <script>
-    // ============= جميع المنتجات =============
+    // ============= المنتجات =============
     const allProducts = [
-        { id: 1, name: 'برغر لحم عراقي', desc: 'لحم عراقي طازج مع صوص خاص', price: 6000, cat: 'burgers', img: 'https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?w=400&h=400&fit=crop' },
-        { id: 2, name: 'برغر دجاج', desc: 'دجاج مقرمش مع خس وطماطم', price: 5500, cat: 'burgers', img: 'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=400&h=400&fit=crop' },
-        { id: 3, name: 'وجبة برغر', desc: 'برغر + بطاطا مقرمشة + مشروب', price: 7500, cat: 'burgers', img: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?w=400&h=400&fit=crop' },
-        { id: 4, name: 'رول شاورما دجاج', desc: 'دجاج مشوي مع ثومية ومخللات', price: 4000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=400&h=400&fit=crop' },
-        { id: 5, name: 'رول شاورما لحم', desc: 'لحم بقري مع صلصة خاصة', price: 4500, cat: 'sandwiches', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=400&h=400&fit=crop' },
-        { id: 6, name: 'صمون كباب', desc: 'كباب عراقي مشوي على الفحم', price: 5000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/4665202/pexels-photo-4665202.jpeg?w=400&h=400&fit=crop' },
-        { id: 7, name: 'صمون فلافل', desc: 'فلافل طازجة مع خضار', price: 2500, cat: 'sandwiches', img: 'https://images.pexels.com/photos/6004520/pexels-photo-6004520.jpeg?w=400&h=400&fit=crop' },
-        { id: 8, name: 'فلافل (10 حبات)', desc: 'فلافل مقرمشة مع طحينة', price: 2000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/6004520/pexels-photo-6004520.jpeg?w=400&h=400&fit=crop' },
-        { id: 9, name: 'وجبة شاورما عربي (دجاج)', desc: 'شاورما دجاج + بطاطا + بيبسي', price: 7000, cat: 'meals', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=400&h=400&fit=crop' },
-        { id: 10, name: 'وجبة شاورما عربي (لحم)', desc: 'شاورما لحم + بطاطا + بيبسي', price: 8000, cat: 'meals', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=400&h=400&fit=crop' },
-        { id: 11, name: 'وجبة ستربس', desc: 'ستربس دجاج + بطاطا + بيبسي', price: 7000, cat: 'meals', img: 'https://images.pexels.com/photos/4720475/pexels-photo-4720475.jpeg?w=400&h=400&fit=crop' },
-        { id: 12, name: 'بطاطا مقلية', desc: 'بطاطا ذهبية مقرمشة', price: 2000, cat: 'sides', img: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?w=400&h=400&fit=crop' },
-        { id: 13, name: 'بطاطا ويه جبن', desc: 'بطاطا مع جبنة شيدر ذائبة', price: 3000, cat: 'sides', img: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?w=400&h=400&fit=crop' },
-        { id: 14, name: 'أجنحة دجاج (6 قطع)', desc: 'أجنحة حارة مع صوص', price: 4000, cat: 'sides', img: 'https://images.pexels.com/photos/2915280/pexels-photo-2915280.jpeg?w=400&h=400&fit=crop' },
-        { id: 15, name: 'ستربس دجاج', desc: 'ستربس مقرمش مع صوص', price: 5000, cat: 'sides', img: 'https://images.pexels.com/photos/4720475/pexels-photo-4720475.jpeg?w=400&h=400&fit=crop' },
-        { id: 16, name: 'بيبسي', desc: 'مشروب غازي', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=400&h=400&fit=crop' },
-        { id: 17, name: 'ميرندا', desc: 'مشروب برتقال', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=400&h=400&fit=crop' },
-        { id: 18, name: 'سفن أب', desc: 'مشروب ليمون', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=400&h=400&fit=crop' },
-        { id: 19, name: 'عصير طبيعي', desc: 'عصير فواكه طازج', price: 2000, cat: 'drinks', img: 'https://images.pexels.com/photos/14465950/pexels-photo-14465950.jpeg?w=400&h=400&fit=crop' },
-        { id: 20, name: 'ماء', desc: 'ماء معدن', price: 500, cat: 'drinks', img: 'https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?w=400&h=400&fit=crop' }
+        { id: 1, name: 'برغر لحم عراقي', desc: 'لحم عراقي طازج مع صوص خاص', price: 6000, cat: 'burgers', img: 'https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?w=300&h=300&fit=crop' },
+        { id: 2, name: 'برغر دجاج', desc: 'دجاج مقرمش مع خس وطماطم', price: 5500, cat: 'burgers', img: 'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=300&h=300&fit=crop' },
+        { id: 3, name: 'وجبة برغر', desc: 'برغر + بطاطا + مشروب', price: 7500, cat: 'burgers', img: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?w=300&h=300&fit=crop' },
+        { id: 4, name: 'رول شاورما دجاج', desc: 'شاورما دجاج بالساج', price: 4000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
+        { id: 5, name: 'رول شاورما لحم', desc: 'شاورما لحم بالساج', price: 4500, cat: 'sandwiches', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
+        { id: 6, name: 'صمون كباب', desc: 'كباب عراقي بالصمون', price: 5000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/4665202/pexels-photo-4665202.jpeg?w=300&h=300&fit=crop' },
+        { id: 7, name: 'صمون فلافل', desc: 'فلافل بالصمون', price: 2500, cat: 'sandwiches', img: 'https://images.pexels.com/photos/6004520/pexels-photo-6004520.jpeg?w=300&h=300&fit=crop' },
+        { id: 8, name: 'فلافل (10 حبات)', desc: 'فلافل مع خضار', price: 2000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/6004520/pexels-photo-6004520.jpeg?w=300&h=300&fit=crop' },
+        { id: 9, name: 'وجبة شاورما عربي (دجاج)', desc: 'شاورما دجاج + بطاطا + مشروب', price: 7000, cat: 'meals', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
+        { id: 10, name: 'وجبة شاورما عربي (لحم)', desc: 'شاورما لحم + بطاطا + مشروب', price: 8000, cat: 'meals', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
+        { id: 11, name: 'وجبة ستربس', desc: 'ستربس + بطاطا + بيبسي', price: 7000, cat: 'meals', img: 'https://images.pexels.com/photos/4720475/pexels-photo-4720475.jpeg?w=300&h=300&fit=crop' },
+        { id: 12, name: 'بطاطا مقلية', desc: 'بطاطا مقرمشة', price: 2000, cat: 'sides', img: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?w=300&h=300&fit=crop' },
+        { id: 13, name: 'بطاطا ويه جبن', desc: 'بطاطا مع جبنة ذائبة', price: 3000, cat: 'sides', img: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?w=300&h=300&fit=crop' },
+        { id: 14, name: 'أجنحة دجاج (6 قطع)', desc: 'أجنحة دجاج حارة', price: 4000, cat: 'sides', img: 'https://images.pexels.com/photos/2915280/pexels-photo-2915280.jpeg?w=300&h=300&fit=crop' },
+        { id: 15, name: 'ستربس دجاج', desc: 'ستربس مقرمش', price: 5000, cat: 'sides', img: 'https://images.pexels.com/photos/4720475/pexels-photo-4720475.jpeg?w=300&h=300&fit=crop' },
+        { id: 16, name: 'بيبسي', desc: 'مشروب غازي', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=300&h=300&fit=crop' },
+        { id: 17, name: 'ميرندا', desc: 'مشروب برتقال', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=300&h=300&fit=crop' },
+        { id: 18, name: 'سفن أب', desc: 'مشروب ليمون', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=300&h=300&fit=crop' },
+        { id: 19, name: 'عصير طبيعي', desc: 'عصير فواكه طازج', price: 2000, cat: 'drinks', img: 'https://images.pexels.com/photos/14465950/pexels-photo-14465950.jpeg?w=300&h=300&fit=crop' },
+        { id: 20, name: 'ماء', desc: 'ماء معدن', price: 500, cat: 'drinks', img: 'https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?w=300&h=300&fit=crop' }
     ];
 
     const categories = [
@@ -459,6 +412,9 @@
     let currentCat = 'burgers';
     let cart = [];
     let showModal = false;
+
+    // رقم الواتساب الجديد
+    const WHATSAPP_NUMBER = '9647815025137'; // 07815025137 بدون الصفر الأول +964
 
     function getCurrentDateTime() {
         const now = new Date();
@@ -488,7 +444,7 @@
         const existing = cart.find(item => item.id === productId);
         if (existing) {
             cart = cart.map(item => item.id === productId ? { ...item, qty: item.qty + 1 } : item);
-            showMessage(`✅ ${product.name} +1 (${existing.qty + 1})`);
+            showMessage(`✅ ${product.name} +1`);
         } else {
             cart.push({ ...product, qty: 1 });
             showMessage(`✅ تم إضافة ${product.name}`);
@@ -539,9 +495,10 @@
         msg += `💰 المجموع: ${getTotal().toLocaleString()} د.ع\n`;
         msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
         msg += `📍 العنوان: \n`;
-        msg += `📞 الجوال: \n`;
+        msg += `📞 الجوال: `;
         
-        window.open(`https://wa.me/9647XXXXXXXXX?text=${encodeURIComponent(msg)}`, '_blank');
+        // فتح واتساب مع الرقم الجديد
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     function changeCategory(cat) {
@@ -589,7 +546,7 @@
             <div class="products">
                 ${productsList.map(product => `
                     <div class="product-card">
-                        <img class="product-img" src="${product.img}" alt="${product.name}" loading="lazy">
+                        <img class="product-img" src="${product.img}" alt="${product.name}" onerror="this.src='https://placehold.co/300x300/1a1a1a/e63946?text=${encodeURIComponent(product.name.charAt(0))}'">
                         <button class="add-btn" onclick="addToCart(${product.id})">+</button>
                         <div class="product-info">
                             <h4>${product.name}</h4>
@@ -618,21 +575,21 @@
                         </div>
                         <div class="modal-body">
                             ${cart.length === 0 ? `
-                                <div style="text-align: center; padding: 50px; color: #888;">
-                                    <div style="font-size: 64px;">🛒</div>
+                                <div style="text-align: center; padding: 40px; color: #666;">
+                                    <div style="font-size: 48px;">🛒</div>
                                     <p>السلة فارغة</p>
                                 </div>
                             ` : `
                                 ${cart.map(item => `
                                     <div class="cart-item">
-                                        <img class="cart-item-img" src="${item.img}" alt="${item.name}">
+                                        <img class="cart-item-img" src="${item.img}" alt="${item.name}" onerror="this.src='https://placehold.co/55x55/1a1a1a/e63946?text=${encodeURIComponent(item.name.charAt(0))}'">
                                         <div class="cart-item-info">
                                             <h4>${item.name}</h4>
                                             <span style="color: #e63946;">${item.price.toLocaleString()} د.ع</span>
                                         </div>
                                         <div class="cart-item-controls">
                                             <button onclick="removeFromCart(${item.id})">-</button>
-                                            <span style="min-width: 35px; text-align: center;">${item.qty}</span>
+                                            <span style="min-width: 30px; text-align: center;">${item.qty}</span>
                                             <button onclick="addToCart(${item.id})">+</button>
                                             <button onclick="deleteFromCart(${item.id})" style="background: #e63946;">🗑</button>
                                         </div>
@@ -640,9 +597,9 @@
                                 `).join('')}
                                 <div class="cart-footer">
                                     <span>المجموع الكلي:</span>
-                                    <span style="color: #e63946; font-size: 24px; font-weight: bold;">${getTotal().toLocaleString()} د.ع</span>
+                                    <span style="color: #e63946; font-size: 22px; font-weight: bold;">${getTotal().toLocaleString()} د.ع</span>
                                 </div>
-                                <button class="whatsapp-btn" onclick="sendOrder(); closeModal();" style="margin-top: 20px; width: 100%;">تأكيد الطلب ✅</button>
+                                <button class="whatsapp-btn" onclick="sendOrder(); closeModal();" style="margin-top: 15px; width: 100%;">تأكيد الطلب ✅</button>
                             `}
                         </div>
                     </div>
