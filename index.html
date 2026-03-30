@@ -251,6 +251,80 @@
             border-radius: 30px;
         }
 
+        /* نافذة إدخال العنوان والرقم */
+        .info-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-content {
+            background: #111;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 25px;
+            padding: 25px;
+            border: 1px solid #e63946;
+        }
+
+        .info-content h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #e63946;
+        }
+
+        .info-content input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .info-content input:focus {
+            outline: none;
+            border-color: #e63946;
+        }
+
+        .info-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .info-buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .confirm-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .cancel-btn {
+            background: #333;
+            color: white;
+        }
+
         .modal {
             position: fixed;
             top: 0;
@@ -379,26 +453,31 @@
 <script>
     // ============= المنتجات =============
     const allProducts = [
-        { id: 1, name: 'برغر لحم عراقي', desc: 'لحم عراقي طازج مع صوص خاص', price: 6000, cat: 'burgers', img: 'https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?w=300&h=300&fit=crop' },
-        { id: 2, name: 'برغر دجاج', desc: 'دجاج مقرمش مع خس وطماطم', price: 5500, cat: 'burgers', img: 'https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg?w=300&h=300&fit=crop' },
-        { id: 3, name: 'وجبة برغر', desc: 'برغر + بطاطا + مشروب', price: 7500, cat: 'burgers', img: 'https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?w=300&h=300&fit=crop' },
-        { id: 4, name: 'رول شاورما دجاج', desc: 'شاورما دجاج بالساج', price: 4000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
-        { id: 5, name: 'رول شاورما لحم', desc: 'شاورما لحم بالساج', price: 4500, cat: 'sandwiches', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
-        { id: 6, name: 'صمون كباب', desc: 'كباب عراقي بالصمون', price: 5000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/4665202/pexels-photo-4665202.jpeg?w=300&h=300&fit=crop' },
-        { id: 7, name: 'صمون فلافل', desc: 'فلافل بالصمون', price: 2500, cat: 'sandwiches', img: 'https://images.pexels.com/photos/6004520/pexels-photo-6004520.jpeg?w=300&h=300&fit=crop' },
-        { id: 8, name: 'فلافل (10 حبات)', desc: 'فلافل مع خضار', price: 2000, cat: 'sandwiches', img: 'https://images.pexels.com/photos/6004520/pexels-photo-6004520.jpeg?w=300&h=300&fit=crop' },
-        { id: 9, name: 'وجبة شاورما عربي (دجاج)', desc: 'شاورما دجاج + بطاطا + مشروب', price: 7000, cat: 'meals', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
-        { id: 10, name: 'وجبة شاورما عربي (لحم)', desc: 'شاورما لحم + بطاطا + مشروب', price: 8000, cat: 'meals', img: 'https://images.pexels.com/photos/5707149/pexels-photo-5707149.jpeg?w=300&h=300&fit=crop' },
-        { id: 11, name: 'وجبة ستربس', desc: 'ستربس + بطاطا + بيبسي', price: 7000, cat: 'meals', img: 'https://images.pexels.com/photos/4720475/pexels-photo-4720475.jpeg?w=300&h=300&fit=crop' },
-        { id: 12, name: 'بطاطا مقلية', desc: 'بطاطا مقرمشة', price: 2000, cat: 'sides', img: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?w=300&h=300&fit=crop' },
-        { id: 13, name: 'بطاطا ويه جبن', desc: 'بطاطا مع جبنة ذائبة', price: 3000, cat: 'sides', img: 'https://images.pexels.com/photos/1893556/pexels-photo-1893556.jpeg?w=300&h=300&fit=crop' },
-        { id: 14, name: 'أجنحة دجاج (6 قطع)', desc: 'أجنحة دجاج حارة', price: 4000, cat: 'sides', img: 'https://images.pexels.com/photos/2915280/pexels-photo-2915280.jpeg?w=300&h=300&fit=crop' },
-        { id: 15, name: 'ستربس دجاج', desc: 'ستربس مقرمش', price: 5000, cat: 'sides', img: 'https://images.pexels.com/photos/4720475/pexels-photo-4720475.jpeg?w=300&h=300&fit=crop' },
-        { id: 16, name: 'بيبسي', desc: 'مشروب غازي', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=300&h=300&fit=crop' },
-        { id: 17, name: 'ميرندا', desc: 'مشروب برتقال', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=300&h=300&fit=crop' },
-        { id: 18, name: 'سفن أب', desc: 'مشروب ليمون', price: 1000, cat: 'drinks', img: 'https://images.pexels.com/photos/3729562/pexels-photo-3729562.jpeg?w=300&h=300&fit=crop' },
-        { id: 19, name: 'عصير طبيعي', desc: 'عصير فواكه طازج', price: 2000, cat: 'drinks', img: 'https://images.pexels.com/photos/14465950/pexels-photo-14465950.jpeg?w=300&h=300&fit=crop' },
-        { id: 20, name: 'ماء', desc: 'ماء معدن', price: 500, cat: 'drinks', img: 'https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?w=300&h=300&fit=crop' }
+        // برجر
+        { id: 1, name: 'برغر لحم عراقي', desc: 'لحم عراقي طازج مع صوص خاص', price: 6000, cat: 'burgers', img: 'https://img.freepik.com/free-photo/juicy-burger-with-beef-tomato-lettuce_114579-5065.jpg?w=300' },
+        { id: 2, name: 'برغر دجاج', desc: 'دجاج مقرمش مع خس وطماطم', price: 5500, cat: 'burgers', img: 'https://img.freepik.com/free-photo/delicious-chicken-burger-with-fresh-vegetables_114579-5064.jpg?w=300' },
+        { id: 3, name: 'وجبة برغر', desc: 'برغر + بطاطا + مشروب', price: 7500, cat: 'burgers', img: 'https://img.freepik.com/free-photo/fast-food-set-burger-fries-drink_114579-5063.jpg?w=300' },
+        // ساندويشات
+        { id: 4, name: 'رول شاورما دجاج', desc: 'شاورما دجاج بالساج', price: 4000, cat: 'sandwiches', img: 'https://img.freepik.com/free-photo/shawarma-wrap-with-chicken-vegetables_114579-5060.jpg?w=300' },
+        { id: 5, name: 'رول شاورما لحم', desc: 'شاورما لحم بالساج', price: 4500, cat: 'sandwiches', img: 'https://img.freepik.com/free-photo/shawarma-wrap-with-meat-vegetables_114579-5059.jpg?w=300' },
+        { id: 6, name: 'صمون كباب', desc: 'كباب عراقي بالصمون', price: 5000, cat: 'sandwiches', img: 'https://img.freepik.com/free-photo/kebab-sandwich-with-grilled-meat_114579-5061.jpg?w=300' },
+        { id: 7, name: 'صمون فلافل', desc: 'فلافل بالصمون', price: 2500, cat: 'sandwiches', img: 'https://img.freepik.com/free-photo/falafel-sandwich-with-vegetables_114579-5058.jpg?w=300' },
+        { id: 8, name: 'فلافل (10 حبات)', desc: 'فلافل مع خضار', price: 2000, cat: 'sandwiches', img: 'https://img.freepik.com/free-photo/fresh-falafel-balls_114579-5057.jpg?w=300' },
+        // وجبات
+        { id: 9, name: 'وجبة شاورما عربي (دجاج)', desc: 'شاورما دجاج + بطاطا + مشروب', price: 7000, cat: 'meals', img: 'https://img.freepik.com/free-photo/chicken-shawarma-plate_114579-5062.jpg?w=300' },
+        { id: 10, name: 'وجبة شاورما عربي (لحم)', desc: 'شاورما لحم + بطاطا + مشروب', price: 8000, cat: 'meals', img: 'https://img.freepik.com/free-photo/meat-shawarma-plate_114579-5066.jpg?w=300' },
+        { id: 11, name: 'وجبة ستربس', desc: 'ستربس + بطاطا + بيبسي', price: 7000, cat: 'meals', img: 'https://img.freepik.com/free-photo/chicken-strips-with-fries_114579-5067.jpg?w=300' },
+        // إضافات
+        { id: 12, name: 'بطاطا مقلية', desc: 'بطاطا مقرمشة', price: 2000, cat: 'sides', img: 'https://img.freepik.com/free-photo/fresh-french-fries_114579-5056.jpg?w=300' },
+        { id: 13, name: 'بطاطا ويه جبن', desc: 'بطاطا مع جبنة ذائبة', price: 3000, cat: 'sides', img: 'https://img.freepik.com/free-photo/cheese-fries_114579-5055.jpg?w=300' },
+        { id: 14, name: 'أجنحة دجاج (6 قطع)', desc: 'أجنحة دجاج حارة', price: 4000, cat: 'sides', img: 'https://img.freepik.com/free-photo/chicken-wings_114579-5054.jpg?w=300' },
+        { id: 15, name: 'ستربس دجاج', desc: 'ستربس مقرمش', price: 5000, cat: 'sides', img: 'https://img.freepik.com/free-photo/chicken-strips_114579-5053.jpg?w=300' },
+        // مشروبات
+        { id: 16, name: 'بيبسي', desc: 'مشروب غازي', price: 1000, cat: 'drinks', img: 'https://img.freepik.com/free-photo/pepsi-can_114579-5052.jpg?w=300' },
+        { id: 17, name: 'ميرندا', desc: 'مشروب برتقال', price: 1000, cat: 'drinks', img: 'https://img.freepik.com/free-photo/orange-soda-can_114579-5051.jpg?w=300' },
+        { id: 18, name: 'سفن أب', desc: 'مشروب ليمون', price: 1000, cat: 'drinks', img: 'https://img.freepik.com/free-photo/lemon-soda-can_114579-5050.jpg?w=300' },
+        { id: 19, name: 'عصير طبيعي', desc: 'عصير فواكه طازج', price: 2000, cat: 'drinks', img: 'https://img.freepik.com/free-photo/fresh-fruit-juice_114579-5049.jpg?w=300' },
+        { id: 20, name: 'ماء', desc: 'ماء معدن', price: 500, cat: 'drinks', img: 'https://img.freepik.com/free-photo/water-bottle_114579-5048.jpg?w=300' }
     ];
 
     const categories = [
@@ -412,9 +491,10 @@
     let currentCat = 'burgers';
     let cart = [];
     let showModal = false;
+    let showInfoModal = false;
+    let pendingOrder = null;
 
-    // رقم الواتساب الجديد
-    const WHATSAPP_NUMBER = '9647815025137'; // 07815025137 بدون الصفر الأول +964
+    const WHATSAPP_NUMBER = '9647815025137';
 
     function getCurrentDateTime() {
         const now = new Date();
@@ -475,7 +555,7 @@
         return cart.reduce((sum, item) => sum + item.qty, 0);
     }
 
-    function sendOrder() {
+    function sendOrderWithInfo(address, phone) {
         if (cart.length === 0) return;
         
         const dateTime = getCurrentDateTime();
@@ -494,11 +574,37 @@
         msg += `━━━━━━━━━━━━━━━━━━━━\n`;
         msg += `💰 المجموع: ${getTotal().toLocaleString()} د.ع\n`;
         msg += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-        msg += `📍 العنوان: \n`;
-        msg += `📞 الجوال: `;
+        msg += `📍 العنوان: ${address}\n`;
+        msg += `📞 الجوال: ${phone}\n`;
+        msg += `━━━━━━━━━━━━━━━━━━━━\n`;
+        msg += `✨ شكراً لثقتكم ✨`;
         
-        // فتح واتساب مع الرقم الجديد
         window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    function requestInfo() {
+        if (cart.length === 0) return;
+        showInfoModal = true;
+        render();
+    }
+
+    function submitInfo() {
+        const address = document.getElementById('addressInput')?.value;
+        const phone = document.getElementById('phoneInput')?.value;
+        
+        if (!address || !phone) {
+            showMessage('⚠️ الرجاء إدخال العنوان ورقم الجوال');
+            return;
+        }
+        
+        sendOrderWithInfo(address, phone);
+        showInfoModal = false;
+        render();
+    }
+
+    function cancelInfo() {
+        showInfoModal = false;
+        render();
     }
 
     function changeCategory(cat) {
@@ -558,13 +664,14 @@
             </div>
             <button class="cart-btn" onclick="openModal()">🛒${getTotalItems() > 0 ? `<span class="cart-count">${getTotalItems()}</span>` : ''}</button>
             <div class="whatsapp-bar">
-                <button class="whatsapp-btn" onclick="sendOrder()" ${cart.length === 0 ? 'disabled' : ''}>
+                <button class="whatsapp-btn" onclick="requestInfo()" ${cart.length === 0 ? 'disabled' : ''}>
                     <span>📱 اطلب عبر واتساب</span>
                     <span class="total-price">${getTotal().toLocaleString()} د.ع</span>
                 </button>
             </div>
         `;
 
+        // مودال السلة
         if (showModal) {
             html += `
                 <div class="modal" onclick="closeModal()">
@@ -599,8 +706,25 @@
                                     <span>المجموع الكلي:</span>
                                     <span style="color: #e63946; font-size: 22px; font-weight: bold;">${getTotal().toLocaleString()} د.ع</span>
                                 </div>
-                                <button class="whatsapp-btn" onclick="sendOrder(); closeModal();" style="margin-top: 15px; width: 100%;">تأكيد الطلب ✅</button>
+                                <button class="whatsapp-btn" onclick="requestInfo(); closeModal();" style="margin-top: 15px; width: 100%;">تأكيد الطلب ✅</button>
                             `}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // نافذة إدخال العنوان والرقم
+        if (showInfoModal) {
+            html += `
+                <div class="info-modal" onclick="cancelInfo()">
+                    <div class="info-content" onclick="event.stopPropagation()">
+                        <h3>📝 معلومات الطلب</h3>
+                        <input type="text" id="addressInput" placeholder="📍 العنوان" autocomplete="off">
+                        <input type="tel" id="phoneInput" placeholder="📞 رقم الجوال" autocomplete="off">
+                        <div class="info-buttons">
+                            <button class="confirm-btn" onclick="submitInfo()">تأكيد</button>
+                            <button class="cancel-btn" onclick="cancelInfo()">إلغاء</button>
                         </div>
                     </div>
                 </div>
@@ -614,7 +738,9 @@
     window.removeFromCart = removeFromCart;
     window.deleteFromCart = deleteFromCart;
     window.changeCategory = changeCategory;
-    window.sendOrder = sendOrder;
+    window.requestInfo = requestInfo;
+    window.submitInfo = submitInfo;
+    window.cancelInfo = cancelInfo;
     window.openModal = openModal;
     window.closeModal = closeModal;
 
